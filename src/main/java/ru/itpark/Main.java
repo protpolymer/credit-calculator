@@ -5,13 +5,12 @@ public class Main {
 
         int sumCredit = 1_000_000;
         double rateYear = 13.75;
-        int period = 60;
+        int period = 18;
 
         CreditCalculatorService creditCalculatorService = new CreditCalculatorService();
-        int credit = creditCalculatorService.paymentMonth(sumCredit, rateYear, period);
-        int total = creditCalculatorService.totalPayments(sumCredit, rateYear, period);
+        String credit = creditCalculatorService.amountCredit(sumCredit, rateYear, period);
 
-        System.out.println(credit + " " + total);
+        System.out.println(credit);
 
     }
 }
