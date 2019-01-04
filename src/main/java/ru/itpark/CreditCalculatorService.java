@@ -1,17 +1,16 @@
 package ru.itpark;
 
+
+import java.math.BigDecimal;
+
 public class CreditCalculatorService {
-    public String amountCredit(int sumCredit, double rateYear, int period){
+    public double amountCredit(int sumCredit, double rateYear, int period){
 
         double rateMonth = rateYear / (12 * 100);
-
         double coefAnnua = (rateMonth * Math.pow(1 + rateMonth, period) / (Math.pow(1 + rateMonth, period) - 1));
         double payment = coefAnnua * sumCredit;
-
-        double credit = payment * period;
-
-        String formattedDouble = String.format("%.2f", credit);
-        return formattedDouble;
+        BigDecimal credit = new BigDecimal(payment * period);
+        return credit.doubleValue();
 
     }
 }

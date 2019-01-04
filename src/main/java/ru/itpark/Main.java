@@ -8,7 +8,7 @@ public class Main {
         int period = 18;
 
         CreditCalculatorService creditCalculatorService = new CreditCalculatorService();
-        String credit = creditCalculatorService.amountCredit(sumCredit, rateYear, period);
+        double credit = creditCalculatorService.amountCredit(sumCredit, rateYear, period);
 
         System.out.println(credit);
 
